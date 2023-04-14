@@ -3,7 +3,9 @@ pipeline {
 
     tools {
         // Install the Maven version configured as "M3" and add it to the path.
-         maven 'MavenTest' 
+         def mvn_version = 'MavenTest'
+    withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
+      //sh "mvn clean package"
        
     }
 
